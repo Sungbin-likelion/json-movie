@@ -1,0 +1,23 @@
+<div class="container">
+<form action="/movies/new" method="get">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Title</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+<div class="container">
+    <% @movie_info.each do |movie| %>
+        <section class="row movie_table">
+            <div class="col-sm-4 poster"><img src="<%= movie['Poster']%>"></img></div>
+            <div class="col-sm-6 content">
+                <p>Title : <%= movie['Title'] %></p>
+                <p>Run time : <%= movie['Runtime']%></p>
+                <p>Year : <%= movie['Year']%></p>
+            </div>
+        </section>
+    <% end %>
+</div>
